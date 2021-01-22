@@ -61,6 +61,7 @@ class _HomePageState extends State<HomePage> {
                               return CategoryCard(
                                 imageAssetUrl: categories[index].imageAssetUrl,
                                 categoryName: categories[index].categorieName,
+                                categoryTitle: categories[index].categorTitle,
                               );
                             }),
                       ),
@@ -92,9 +93,9 @@ class _HomePageState extends State<HomePage> {
 }
 
 class CategoryCard extends StatelessWidget {
-  final String imageAssetUrl, categoryName;
+  final String imageAssetUrl, categoryName, categoryTitle;
 
-  CategoryCard({this.imageAssetUrl, this.categoryName});
+  CategoryCard({this.imageAssetUrl, this.categoryName , this.categoryTitle });
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +129,7 @@ class CategoryCard extends StatelessWidget {
                 color: Colors.black26
               ),
               child: Text(
-                categoryName,
+                categoryTitle,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white,
